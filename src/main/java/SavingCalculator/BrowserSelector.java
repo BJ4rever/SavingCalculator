@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Bhavesh on 17/06/2017.
+ * Created by Bhavesh Patel on 17/06/2017.
  */
 
 public class BrowserSelector extends BasePage {
@@ -23,7 +23,7 @@ public class BrowserSelector extends BasePage {
     String browser =loadProp.getProperty("browser");
 
     //This will run from Jenkins
-    //String browser = System.getProperty("browser");
+//    String browser = System.getProperty("browser");
 
     public void selectBrowser(){
 

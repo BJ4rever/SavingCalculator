@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Created by Bhavesh on 17/06/2017.
+ * Created by Bhavesh Patel on 17/06/2017.
  */
 public class LoadProp extends BasePage {
 
