@@ -5,6 +5,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
 import javax.imageio.ImageIO;
@@ -70,6 +71,21 @@ public class Utils extends BasePage {
 
     // re-usable method to click on element
     public static void clickOnElement(By by){
+
         driver.findElement(by).click();
+    }
+
+    //Reusable method for Fail Test Screenshot
+    public static void captureFailTestScreenShot(WebDriver driver, String screenShotName){
+
+        try {
+            TakesScreenshot takesScreenshot = (TakesScreenshot)driver;
+            File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(source, new File("./ScreenShot/" + screenShotName + ".png"));
+            System.out.println("Screenshot taken");
+        }
+        catch (Exception e){
+            System.out.println("Exception while taking screenshot" + e.getMessage());
+        }
     }
 }

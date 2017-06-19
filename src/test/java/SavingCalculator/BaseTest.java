@@ -2,6 +2,7 @@ package SavingCalculator;
 
 
 import cucumber.api.Scenario;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -25,8 +26,10 @@ public class BaseTest extends BasePage {
     }
 
     @AfterMethod
-    public void closeBrowser(){
-        Utils.printScreenShot("src\\test\\Resources\\ScreenShot");
+    public void closeBrowser(ITestResult result){
+        if(ITestResult.FAILURE == result.getStatus()){
+            Utils.captureFailTestScreenShot(driver, result.getName());
+        }
         driver.quit();
     }
 }
