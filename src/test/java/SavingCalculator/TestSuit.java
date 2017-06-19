@@ -4,7 +4,7 @@ package SavingCalculator;
 import org.testng.annotations.Test;
 
 /**
- * Unit test for simple BasePage.
+ * Created by Bhavesh Patel on 17/06/2017.
  */
 
 public class TestSuit extends BaseTest {
