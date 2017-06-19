@@ -46,7 +46,7 @@ public class BrowserSelector extends BasePage {
             caps.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
             caps.setCapability("chrome.switches", Arrays.asList("--incognito"));
             caps.setCapability(ChromeOptions.CAPABILITY, options);
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(caps);
 
         }else if (browser.equalsIgnoreCase("ie")){
             System.setProperty("webdriver.ie.driver", "src\\test\\Resources\\BrowserSelector\\IEDriverServer.exe");
