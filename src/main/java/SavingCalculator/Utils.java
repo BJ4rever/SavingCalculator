@@ -39,7 +39,7 @@ public class Utils extends BasePage {
 
     //Reusable Method For DateStamp
     public static String dateStamp(){
-        DateFormat dateFormat = new SimpleDateFormat("ddmmyyhhss");
+        DateFormat dateFormat = new SimpleDateFormat("ddMMMyyHHmm");
         Date date = new Date();
         String date1 = dateFormat.format(date);
         return date1;
@@ -47,7 +47,7 @@ public class Utils extends BasePage {
 
 
     //Reusable method for getText
-    public static String getTextFromElement(By by){     //return type as String - why? to store and return the test we are receving from the element
+    public static String getTextFromElement(By by){     //return type as String - why? to store and return the test we are receiving from the element
         String text =  driver.findElement(by).getText();                                                          // so we can reuse the text
         return text;
     }
@@ -56,7 +56,7 @@ public class Utils extends BasePage {
     public static void sleep(int i){
         try {
             Thread.sleep(i * 1000);   // we are converting the millisecond into seconds
-        } catch (InterruptedException e) {    //Thread.sleep producing IntrruptedException and we are handling it by using try and catch
+        } catch (InterruptedException e) {    //Thread.sleep producing Interrupted Exception and we are handling it by using try and catch
             e.printStackTrace();
         }
     }
@@ -75,14 +75,14 @@ public class Utils extends BasePage {
         driver.findElement(by).click();
     }
 
-    //Reusable method for Fail Test Screenshot
+    //Reusable method for Fail Test Screenshot for Just Maven Project
     public static void captureFailTestScreenShot(WebDriver driver, String screenShotName){
 
         try {
             TakesScreenshot takesScreenshot = (TakesScreenshot)driver;
             File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(source, new File("./ScreenShot/" + screenShotName + ".png"));
-            System.out.println("Screenshot taken");
+            FileUtils.copyFile(source, new File("./ScreenShot/" + screenShotName + "." +dateStamp()+ ".png"));
+            System.out.println("Screenshot has been taken");
         }
         catch (Exception e){
             System.out.println("Exception while taking screenshot" + e.getMessage());

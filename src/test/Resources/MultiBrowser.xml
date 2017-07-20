@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MultiBrowser" parallel="tests">
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="SavingCalculator.TestSuit"/>
+        </classes>
+    </test>
+
+    <test name="Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SavingCalculator.TestSuit"/>
+        </classes>
+    </test>
+
+    <test name="ie">
+        <parameter name="browser" value="ie"/>
+        <classes>
+            <class name="SavingCalculator.TestSuit"/>
+        </classes>
+    </test>
+
+</suite>

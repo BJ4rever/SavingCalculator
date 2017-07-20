@@ -5,7 +5,7 @@ import cucumber.api.Scenario;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class BaseTest extends BasePage {
 
+    Utils utils = new Utils();
     BrowserSelector browserSelector = new BrowserSelector();
 
     @BeforeMethod
@@ -28,7 +29,7 @@ public class BaseTest extends BasePage {
     @AfterMethod
     public void closeBrowser(ITestResult result){
         if(ITestResult.FAILURE == result.getStatus()){
-            Utils.captureFailTestScreenShot(driver, result.getName());
+            utils.captureFailTestScreenShot(driver, result.getName());
         }
         driver.quit();
     }

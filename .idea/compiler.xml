@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Bhavesh_ClearScore_Test" />
         <module name="SavingCalculator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Bhavesh_ClearScore_Test" target="1.5" />
       <module name="SavingCalculator" target="1.5" />
     </bytecodeTargetLevel>
   </component>
